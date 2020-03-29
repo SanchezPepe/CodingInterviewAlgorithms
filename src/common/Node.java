@@ -3,35 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eda;
+package common;
 
 /**
  *
- * @author hca
+ * @author Jose Sanchez
  */
-public class Nodo <T> {
+public class Node <T> {
     
     private T elem;
-    private Nodo<T> sig;
+    private Node<T> sig;
     
-    public Nodo(){
+    public Node(){
         sig = null;
     }
     
-    public Nodo(T elem){
+    public Node(T elem){
         this.elem = elem;
         sig = null;
     }
     
-    public T getElem(){
+    public T getData(){
         return elem;
     }
     
-    public Nodo<T> getSig(){
+    public Node<T> getSig(){
         return sig;
     }
     
-    public void setSig(Nodo<T> nuevo){
+    public void setSig(Node<T> nuevo){
         sig = nuevo;
     }    
     

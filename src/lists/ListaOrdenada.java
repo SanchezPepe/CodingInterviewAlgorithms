@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package listas;
+package lists;
 
 import java.util.Iterator;
+import common.Node;
 
 /**
  *
@@ -18,15 +19,15 @@ public class ListaOrdenada <T extends Comparable <T>> extends Lista <T> implemen
     }
     
     public void agrega(T dato){
-        Nodo<T> nuevo = new Nodo(dato);
-        if(estaVacia() || prim.getDato().compareTo(dato) >= 0){
+        Node<T> nuevo = new Node(dato);
+        if(estaVacia() || prim.getData().compareTo(dato) >= 0){
             nuevo.setSig(prim);
             prim = nuevo;
         }
         else{
-            Nodo <T> act = prim.getSig();
-            Nodo <T> ant = prim;
-            while(act != null && act.getDato().compareTo(dato) < 0){
+            Node <T> act = prim.getSig();
+            Node <T> ant = prim;
+            while(act != null && act.getData().compareTo(dato) < 0){
                 ant.setSig(nuevo);
                 nuevo.setSig(act);
             }
@@ -36,18 +37,18 @@ public class ListaOrdenada <T extends Comparable <T>> extends Lista <T> implemen
     public T quita(T dato){
         T res = null;
         if(!estaVacia()){
-            if(dato.equals(prim.getDato()))
+            if(dato.equals(prim.getData()))
                 res = quitaPrimero();
             else{
-                Nodo <T> ant = prim;
-                Nodo <T> act = prim.getSig();
-                while(act != null && act.getDato().compareTo(dato) < 0){
+                Node <T> ant = prim;
+                Node <T> act = prim.getSig();
+                while(act != null && act.getData().compareTo(dato) < 0){
                     ant = act;
                     act = act.getSig();
                 }
-                if(act != null && act.getDato().equals(dato)){
+                if(act != null && act.getData().equals(dato)){
                     ant.setSig(act.getSig());
-                    res = act.getDato();
+                    res = act.getData();
                     act.setSig(null);
                 }
             }
@@ -85,11 +86,11 @@ public class ListaOrdenada <T extends Comparable <T>> extends Lista <T> implemen
         return res;
     }
     
-    private boolean equals(Nodo <T> n1, Nodo <T> n2){
+    private boolean equals(Node <T> n1, Node <T> n2){
         if(n1 == null) //O N2
             return true;
         else{
-            if(n1.getDato().equals(n2.getDato()))
+            if(n1.getData().equals(n2.getData()))
                 return equals(n1.getSig(), n2.getSig());
             else
                 return false;

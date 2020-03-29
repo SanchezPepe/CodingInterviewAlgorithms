@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package listas;
+package lists;
 
 import java.util.Iterator;
+import common.Node;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.util.Iterator;
  */
 public abstract class Lista <T> implements ListaADT <T>{
     
-    protected Nodo <T> prim;
+    protected Node <T> prim;
     
     public Lista(){
         prim = null;
@@ -30,8 +31,8 @@ public abstract class Lista <T> implements ListaADT <T>{
     public T quitaPrimero(){
         T res = null;
         if(!estaVacia()){
-            res = prim.getDato();
-            listas.Nodo <T> aux = prim;
+            res = prim.getData();
+            Node <T> aux = prim;
             prim = prim.getSig();
             aux.setSig(null);
         }
@@ -41,17 +42,17 @@ public abstract class Lista <T> implements ListaADT <T>{
     public T quita(T dato){
         T res = null;
         if(!estaVacia())
-            if(prim.getDato().equals(dato))
+            if(prim.getData().equals(dato))
                 res = quitaPrimero();
             else{
-                listas.Nodo <T> ap = prim.getSig();
-                listas.Nodo <T> ant = prim;
-                while(ap != null && !ap.getDato().equals(dato)){
+                Node <T> ap = prim.getSig();
+                Node <T> ant = prim;
+                while(ap != null && !ap.getData().equals(dato)){
                     ant = ap;
                     ap = ap.getSig();
                 }
                 if(ap != null){
-                    res = ap.getDato();
+                    res = ap.getData();
                     ant.setSig(ap.getSig());
                     ap.setSig(null);
                 }
@@ -62,13 +63,13 @@ public abstract class Lista <T> implements ListaADT <T>{
     public T quitaUltimo(){
         T res = null;
         if(!estaVacia()){
-            listas.Nodo <T> ap = prim;
-            listas.Nodo <T> ant = null;
+            Node <T> ap = prim;
+            Node <T> ant = null;
             while(ap.getSig() != null){
                 ant = ap;
                 ap = ap.getSig();
             }
-            res = ap.getDato();
+            res = ap.getData();
             if(ant == null)
                 prim = null;
             else
@@ -94,7 +95,7 @@ public abstract class Lista <T> implements ListaADT <T>{
         return calculaTamaño(prim, 0);
     }
 
-    private int calculaTamaño(listas.Nodo <T> act, int cont){
+    private int calculaTamaño(Node <T> act, int cont){
         if(act == null)
             return cont;
         else
@@ -102,14 +103,14 @@ public abstract class Lista <T> implements ListaADT <T>{
     }
     
     public T obtienePrimero() {
-        return prim.getDato();
+        return prim.getData();
     }
     
     public T obtieneUltimo(){
-        Nodo <T> aux = prim;
+        Node <T> aux = prim;
         while(aux != null)
             aux = aux.getSig();
-        return aux.getDato();
+        return aux.getData();
                 
     }
     

@@ -1,6 +1,6 @@
 package Arboles;
 
-import EDA.NodoBinario;
+import common.BinaryNode;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -12,7 +12,7 @@ import java.util.Queue;
  */
 public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTreeADT{
     protected int cont;
-    protected NodoBinario<T> raiz;
+    protected BinaryNode<T> raiz;
 
     public LinkedBinaryTree() {
         this.raiz = null;
@@ -20,7 +20,7 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTreeADT{
     }
 
     public LinkedBinaryTree(T elem) {
-        this.raiz = new NodoBinario(elem);
+        this.raiz = new BinaryNode(elem);
         this.cont = 1;
     }
     
@@ -36,7 +36,7 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTreeADT{
         return contains(dato,raiz);
     }
     
-    private boolean contains(Comparable dato, NodoBinario raiz){
+    private boolean contains(Comparable dato, BinaryNode raiz){
         if(raiz.getElem().equals(dato))
             return true;
         if(raiz.equals(null))
@@ -52,7 +52,7 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTreeADT{
         return (Comparable)find(dato,raiz);
     }
     
-    private NodoBinario<T> find(Comparable dato, NodoBinario raiz){
+    private BinaryNode<T> find(Comparable dato, BinaryNode raiz){
         if(raiz.getElem().equals(dato))
             return raiz;
         if(raiz.equals(null))
@@ -70,7 +70,7 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTreeADT{
         return lista.iterator();
     }
 
-    private void inOrder(NodoBinario <T> nodo, ArrayList <T> lista){
+    private void inOrder(BinaryNode <T> nodo, ArrayList <T> lista){
         if(nodo == null)
             return;
         inOrder(nodo.getIzq(), lista);
@@ -84,7 +84,7 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTreeADT{
         return lista.iterator();
     }
     
-    private void preOrder(NodoBinario <T> nodo, ArrayList <T> lista){
+    private void preOrder(BinaryNode <T> nodo, ArrayList <T> lista){
         if(nodo == null)
             return;
         lista.add(nodo.getElem());
@@ -98,7 +98,7 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTreeADT{
         return lista.iterator();
     }
     
-    private void postOrder(NodoBinario <T> nodo, ArrayList <T> lista){
+    private void postOrder(BinaryNode <T> nodo, ArrayList <T> lista){
         if(nodo == null)
             return;
         postOrder(nodo.getIzq(), lista);
@@ -112,12 +112,12 @@ public class LinkedBinaryTree<T extends Comparable<T>> implements BinaryTreeADT{
         return lista.iterator();
     }
     
-    private void levelOrder(NodoBinario<T> actual, ArrayList<T> lista) {
-        Queue <NodoBinario <T>> cola = new LinkedList();
+    private void levelOrder(BinaryNode<T> actual, ArrayList<T> lista) {
+        Queue <BinaryNode <T>> cola = new LinkedList();
         cola.add(actual);
         
         while(!cola.isEmpty()){
-            NodoBinario <T> temp = cola.remove();
+            BinaryNode <T> temp = cola.remove();
             lista.add(temp.getElem());
             if(temp.getIzq() != null)
                 cola.add(temp.getIzq());

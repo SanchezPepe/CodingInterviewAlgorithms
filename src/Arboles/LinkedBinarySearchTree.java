@@ -5,8 +5,7 @@
  */
 package Arboles;
 
-import EDA.NodoBinario;
-
+import common.BinaryNode;
 /**
  *
  * @author FOF
@@ -19,15 +18,15 @@ public class LinkedBinarySearchTree<T extends Comparable<T>> extends LinkedBinar
 
     public void add(T dato) {
         if(this.cont == 0)
-            this.raiz = new NodoBinario(dato);
+            this.raiz = new BinaryNode(dato);
         else
             add(this.raiz, dato);
         this.cont++;
     }
     
-    private NodoBinario <T> add(NodoBinario <T> actual, T dato){
+    private BinaryNode <T> add(BinaryNode <T> actual, T dato){
         if(actual == null)
-            return new NodoBinario <>(dato);
+            return new BinaryNode <>(dato);
         if(dato.compareTo(actual.getElem()) < 0)
             actual.setIzq(add(actual.getIzq(), dato));
         else
@@ -48,7 +47,7 @@ public class LinkedBinarySearchTree<T extends Comparable<T>> extends LinkedBinar
             }else{
                 //hay que recorrer hasta encontrarlo y sustituir, por sucesor en orden si lo hay
                 //en caso de que no lo haya... sustituir por el izquierdo
-                NodoBinario<T> act,ant;
+                BinaryNode<T> act,ant;
                 act=raiz;
                 ant=act;
                 while(act!=null && !act.getElem().equals(dato)){
@@ -78,15 +77,15 @@ public class LinkedBinarySearchTree<T extends Comparable<T>> extends LinkedBinar
         return res;
     }
     
-    private T sucesorInOrden(NodoBinario<T> n){
+    private T sucesorInOrden(BinaryNode<T> n){
         T res = null; 
         /**
          * Este método te regresa el sucesor en orden y al mismo tiempo lo elimina del arbol
          * si regresa null, es que no hay nada a su derecha
          */
         if(n.getDer()!=null){
-            NodoBinario act = n.getDer(); 
-            NodoBinario ant = n;
+            BinaryNode act = n.getDer(); 
+            BinaryNode ant = n;
             while(act.getIzq()!=null){
                 ant = act;
                 act = act.getIzq();
@@ -116,8 +115,8 @@ public class LinkedBinarySearchTree<T extends Comparable<T>> extends LinkedBinar
     public T removeMin() {
         T temp = null;
         if(!isEmpty()){
-            NodoBinario <T> actual = this.raiz;
-            NodoBinario <T> papa = actual;
+            BinaryNode <T> actual = this.raiz;
+            BinaryNode <T> papa = actual;
             while(actual.getIzq() != null){
                 papa = actual;
                 actual = actual.getIzq();
@@ -136,8 +135,8 @@ public class LinkedBinarySearchTree<T extends Comparable<T>> extends LinkedBinar
     public T removeMax() {
         T res = null;
         if(!isEmpty()){
-            NodoBinario <T> actual = this.raiz;
-            NodoBinario <T> papa = actual;
+            BinaryNode <T> actual = this.raiz;
+            BinaryNode <T> papa = actual;
             while(actual.getDer() != null){
                 papa = actual;
                 actual = actual.getDer();
@@ -156,7 +155,7 @@ public class LinkedBinarySearchTree<T extends Comparable<T>> extends LinkedBinar
     public T findMin() {
         if(raiz==null)
             return null;
-        NodoBinario<T> actual = raiz;
+        BinaryNode<T> actual = raiz;
         while(actual!=null)
             actual = actual.getIzq();
         return actual.getElem();
@@ -165,7 +164,7 @@ public class LinkedBinarySearchTree<T extends Comparable<T>> extends LinkedBinar
     public T findMax() {
         if(raiz==null)
             return null;
-        NodoBinario<T> actual = raiz;
+        BinaryNode<T> actual = raiz;
         while(actual.getDer()!=null)
             actual = actual.getDer();
         return actual.getElem();

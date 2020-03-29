@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package listas;
+package lists;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import listas.Nodo;
+import common.Node;
 
 /**
  *
@@ -15,9 +15,9 @@ import listas.Nodo;
  */
 public class IteradorEE <T> implements Iterator <T>{
     
-    private Nodo <T> actual;
+    private Node <T> actual;
     
-    public IteradorEE(Nodo<T> dir){
+    public IteradorEE(Node<T> dir){
         actual = dir;
     }
     
@@ -27,7 +27,7 @@ public class IteradorEE <T> implements Iterator <T>{
     
     public T next(){
         if(hasNext()){
-            T dato = actual.getDato();
+            T dato = actual.getData();
             actual = actual.getSig();
             return dato;
         }

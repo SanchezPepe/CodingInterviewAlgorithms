@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package listas;
+package lists;
 
 /**
  *
- * @author hca
+ * @author José Sánchez
  */
 public interface ListaOrdenadaADT <T> extends ListaADT <T> {
     
