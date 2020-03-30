@@ -1,2 +1,3 @@
-# Data-Structures
-Data Structures in Java
+# AlgoCasts
+
+Companion repo to a course on Udemy.com
