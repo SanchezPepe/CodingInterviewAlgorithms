@@ -16,8 +16,8 @@ class Program {
             boolean swap = false;
             for (int j = 0; j < i; j++) {
                 if (array[j] > array[j + 1]) {
-						 swap(j, j + 1, array);
-                   swap = true;
+					swap(j, j + 1, array);
+					swap = true;
                 }
             }
             if (!swap) return array;
