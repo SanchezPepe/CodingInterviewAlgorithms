@@ -10,25 +10,24 @@ import java.util.*;
 */
 
 class Program {
-  public static int[] bubbleSort(int[] array) {
-    // Write your code here.
-		for(int i = array.length-1; i >= 0; i--){
-			boolean swap = false;
-			for(int j = 0; j < i; j++){
-				if(array[j] > array[j+1]){
-					swap(j, j+1, array);
-					swap = true;
-				} 
-			}
-			if(!swap) return array;
-		}
-    return array;
-  }
-	
-	public static void swap(int a, int b, int[] array){
-		int temp = array[a];
-		array[a] = array[b];
-		array[b] = temp;
-	}
-}
+    public static int[] bubbleSort(int[] array) {
+        // Write your code here.
+        for (int i = array.length - 1; i >= 0; i--) {
+            boolean swap = false;
+            for (int j = 0; j < i; j++) {
+                if (array[j] > array[j + 1]) {
+						 swap(j, j + 1, array);
+                   swap = true;
+                }
+            }
+            if (!swap) return array;
+        }
+        return array;
+    }
 
+    public static void swap(int a, int b, int[] array) {
+        int temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
+    }
+}
