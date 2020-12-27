@@ -4,7 +4,7 @@ import java.util.*;
 	Consists in two for loops, on each iteration we compare two elements a = a[i] and b = a[i+1]
 	If after one loop no swap occurs means the array is sorted bcs for all elements a is always <= than b
 	If a < b we perform a swap, and turn on flag to track that swap at the end of the loop
-	
+	----------
 	TC O(n^2)
 	SP O(1) - Each swap is done in place, no extra memory is needed
 */
