@@ -1,3 +1,3 @@
-# AlgoCasts
+# Coding Interview
 
-Companion repo to a course on Udemy.com
+Exercises to practice for Coding Interview in Java and Javascript
