@@ -7,13 +7,13 @@ class Program {
     public Node tail;
 		
 		// O(n) time | O(1) space
-		public boolean containsNodeWithValue(int value) {
-			Node node = head;
-			
-			while(node != null && node.value != value){
-				node = node.next;
-			}
-      return node != null;
+	public boolean containsNodeWithValue(int value) {
+		Node node = head;
+		
+		while(node != null && node.value != value){
+			node = node.next;
+		}
+      	return node != null;
     }
 		
 		// O(1) time | O(1) space
