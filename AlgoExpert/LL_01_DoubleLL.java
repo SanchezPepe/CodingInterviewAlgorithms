@@ -112,7 +112,6 @@ class Program {
 
 
 	// Do not edit the class below.
-  
 	static class Node {
 		public int value;
 		public Node prev;
