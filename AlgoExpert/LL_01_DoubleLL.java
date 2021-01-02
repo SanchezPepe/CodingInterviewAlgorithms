@@ -59,7 +59,7 @@ class Program {
 		
 		// O(1) time | O(1) space
     public void insertAfter(Node node, Node nodeToInsert) {
-      // Write your code here.
+    	// Write your code here.
 			if(nodeToInsert == head && nodeToInsert == tail) return;
 			
 			remove(nodeToInsert);
