@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Program {
-  public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
+	public static List<Integer[]> threeNumberSum(int[] array, int targetSum) {
 		Arrays.sort(array);
 		List<Integer[]> ans = new ArrayList<Integer[]>();
 		for(int i = 0; i < array.length - 2; i++){
