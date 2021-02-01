@@ -13,22 +13,22 @@ import java.util.*;
 */
 
 class Program {
-	public static int[] insertionSort(int[] array) {
-		// First element is 'sorted'
-		for (int i = 1; i<array.length; i++) {
-			int temp = i;
-			while (temp > 0 && array[temp - 1] > array[temp]) {
-				leftSwap(array, temp);
-				temp--;
-			}
-		}
+    public static int[] insertionSort(int[] array) {
+        // First element is 'sorted'
+        for (int i = 1; i<array.length; i++) {
+            int temp = i;
+            while (temp > 0 && array[temp - 1] > array[temp]) {
+                leftSwap(array, temp);
+                temp--;
+            }
+        }
 
-		return array;
-	}
+        return array;
+    }
 
-	public static void leftSwap(int[] array, int index) {
-		int temp = array[index - 1];
-		array[index - 1] = array[index];
-		array[index] = temp;
-	}
+    public static void leftSwap(int[] array, int index) {
+        int temp = array[index - 1];
+        array[index - 1] = array[index];
+        array[index] = temp;
+    }
 }

@@ -11,29 +11,29 @@ import java.util.*;
 */
 
 class Program {
-	public static int[] selectionSort(int[] array) {
+    public static int[] selectionSort(int[] array) {
 
-		for (int i = 0; i<array.length; i++) {
-			int min = array[i];
-			int minIdx = -1;
+        for (int i = 0; i<array.length; i++) {
+            int min = array[i];
+            int minIdx = -1;
 
-			for (int j = i; j<array.length; j++) {
-				if (array[j]<min) {
-					min = array[j];
-					minIdx = j;
-				}
-			}
-			if (minIdx != -1)
-				swap(array, i, minIdx);
+            for (int j = i; j<array.length; j++) {
+                if (array[j]<min) {
+                    min = array[j];
+                    minIdx = j;
+                }
+            }
+            if (minIdx != -1)
+                swap(array, i, minIdx);
 
-		}
-		return array;
-	}
+        }
+        return array;
+    }
 
-	public static void swap(int[] array, int i, int j) {
-		int temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-		return;
-	}
+    public static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+        return;
+    }
 }
