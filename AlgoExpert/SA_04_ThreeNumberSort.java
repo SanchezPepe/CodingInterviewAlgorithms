@@ -10,7 +10,8 @@ import java.util.*;
 
 	TC - O(n) - We sort the array on the first pass as we move the indexes and make the swaps
 	SC - O(1) - The sort is done in place, no aditional memory is needed
-	**/
+
+**/
 
 class Program {
     public int[] threeNumberSort(int[] array, int[] order) {
