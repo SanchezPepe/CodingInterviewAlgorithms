@@ -1,3 +1,5 @@
+# Notes: https://snchzpepe.notion.site/Branch-Sums-64bcc063fc2448b38db2cb7a93bcf1f6
+
 # This is the class of the input root. Do not edit it.
 class BinaryTree:
     def __init__(self, value):
