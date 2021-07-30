@@ -1,3 +1,5 @@
+// Notes: https://snchzpepe.notion.site/Two-Number-Sum-05a5eca18977445e86d597971a2766ed
+
 import java.util.*;
 
 class Program {
