@@ -19,3 +19,5 @@ def branchDepth(sums, sum, node):
             branchDepth(sums, sum, node.left)
         if(node.right is not None):
             branchDepth(sums, sum, node.right)
+
+            
