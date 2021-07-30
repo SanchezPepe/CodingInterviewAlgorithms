@@ -6,16 +6,16 @@ class BinaryTree:
         self.right = None
 
 def branchSums(root):
-	sums = []
-	branchDepth(sums, 0, root)
-	return sums
+    sums = []
+    branchDepth(sums, 0, root)
+    return sums
     
 def branchDepth(sums, sum, node):
-	if node.left is None and node.right is None:
-		sums.append(sum + node.value)
-	else:
-		sum += node.value
-		if(node.left is not None):
-			branchDepth(sums, sum, node.left)
-		if(node.right is not None):
-			branchDepth(sums, sum, node.right)
+    if node.left is None and node.right is None:
+        sums.append(sum + node.value)
+    else:
+        sum += node.value
+        if(node.left is not None):
+            branchDepth(sums, sum, node.left)
+        if(node.right is not None):
+            branchDepth(sums, sum, node.right)
