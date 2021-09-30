@@ -2,9 +2,6 @@
 # SC O(n) using sortedIn, Using intervals O(1)
 
 def mergeOverlappingIntervals(intervals):
-
-    # Write your code here.
-
     sortedInt = sorted(intervals, key=lambda x: x[0])
     i = 0
     while i < len(sortedInt) - 1:
